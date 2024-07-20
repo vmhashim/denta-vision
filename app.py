@@ -9,7 +9,7 @@ st.header('Upload a Tooth Image to Determine the Age')
 page_bg_img = '''
 <style>
 body {
-    background-image: url("https://img.freepik.com/free-vector/happy-kid-sitting-big-tooth-white-background_1308-92753.jpg?t=st=1721447628~exp=1721451228~hmac=36e9f8e5199589c02c6f717f8b98cb4b1da57b04b17de019d65ca294d61d3c66&w=360");
+    background-image: url("https://drive.google.com/file/d/1ldfOYvTr0HJBa_wcXTjYgpImjCWrKSes/view?usp=drive_link");
     background-size: cover;
 }
 </style>
