@@ -10,7 +10,7 @@ st.markdown(
     <style>
     .title {
         text-align: center;
-        color: red;
+        color: black;  /* Changed to black color */
         font-size: 50px;
         font-weight: bold;
         margin-top: 20px;
