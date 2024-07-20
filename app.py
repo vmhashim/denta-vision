@@ -9,7 +9,7 @@ st.header('Upload a Tooth Image to Determine the Age')
 page_bg_img = '''
 <style>
 body {
-    background-image: url("https://www.dreamstime.com/dead-decay-tooth-missing-go-to-heaven-illustration-cartoon-character-vector-design-blue-background-dental-care-concept-dead-image172345506");
+    background-image: url("https://img.freepik.com/free-vector/happy-kid-sitting-big-tooth-white-background_1308-92753.jpg?t=st=1721447628~exp=1721451228~hmac=36e9f8e5199589c02c6f717f8b98cb4b1da57b04b17de019d65ca294d61d3c66&w=360");
     background-size: cover;
 }
 </style>
