@@ -18,7 +18,7 @@ st.markdown(
     .logo {
         display: block;
         margin: 0 auto;
-        max-width: 150px; /* Adjust the size of the logo */
+        max-width: 100px; /* Adjusted the size of the logo */
     }
     body {
         background-color: #f0f0f0;  /* Grayish background color */
