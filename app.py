@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import tempfile
 
-# Frontend: Streamlit interface with grayish background and footer
+# Frontend: Streamlit interface with grayish background, footer, and logo
 st.markdown(
     """
     <style>
@@ -13,6 +13,12 @@ st.markdown(
         color: red;
         font-size: 50px;
         font-weight: bold;
+        margin-top: 20px;
+    }
+    .logo {
+        display: block;
+        margin: 0 auto;
+        max-width: 150px; /* Adjust the size of the logo */
     }
     body {
         background-color: #f0f0f0;  /* Grayish background color */
@@ -28,6 +34,9 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
+# Display the logo
+st.markdown('<img class="logo" src="https://raw.githubusercontent.com/vmhashim/denta-vision/main/assets/logo.jpg" alt="Logo">', unsafe_allow_html=True)
 
 st.markdown('<div class="title">DENTA VISION</div>', unsafe_allow_html=True)
 st.write("Upload a Tooth Image to Determine the Age")
