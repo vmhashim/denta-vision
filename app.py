@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import tempfile
 
-# Frontend: Streamlit interface with grayish background, footer, and logo
+# Frontend: Streamlit interface with grayish background, footer, logo, and background image
 st.markdown(
     """
     <style>
@@ -23,7 +23,8 @@ st.markdown(
         object-fit: cover; /* Maintain aspect ratio, cover the container */
     }
     body {
-        background-color: #f0f0f0;  /* Grayish background color */
+        background: url('https://raw.githubusercontent.com/vmhashim/denta-vision/main/assets/bg.jpg') no-repeat center center fixed; 
+        background-size: cover;  /* Cover the entire window */
     }
     .footer {
         position: fixed;
@@ -31,6 +32,13 @@ st.markdown(
         left: 10px;
         font-size: 12px;
         color: #000000; /* Black color for text */
+    }
+    .stFileUploader > div {
+        border-radius: 12px;  /* Rounded corners */
+        border: 2px solid #ccc;  /* Border color */
+        padding: 20px;  /* Padding around the button */
+        background-color: #ffffff;  /* Background color of the upload area */
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Shadow for a subtle 3D effect */
     }
     </style>
     """,
