@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import tempfile
 
-# Frontend: Streamlit interface
+# Frontend: Streamlit interface with grayish background
 st.markdown(
     """
     <style>
@@ -13,6 +13,9 @@ st.markdown(
         color: red;
         font-size: 50px;
         font-weight: bold;
+    }
+    body {
+        background-color: #f0f0f0;  /* Grayish background color */
     }
     </style>
     """,
