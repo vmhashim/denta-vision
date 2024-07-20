@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import tempfile
 
-# Frontend: Streamlit interface with grayish background, footer, logo, and background image
+# Frontend: Streamlit interface with logo, title, and background image
 st.markdown(
     """
     <style>
