@@ -23,7 +23,7 @@ st.markdown(
         object-fit: cover; /* Maintain aspect ratio, cover the container */
     }
     body {
-        background: url('https://raw.githubusercontent.com/vmhashim/denta-vision/main/assets/bg.jpg') no-repeat center center fixed; 
+        background: url('https://raw.githubusercontent.com/vmhashim/denta-vision/main/bg.jpg') no-repeat center center fixed; 
         background-size: cover;  /* Cover the entire window */
     }
     .footer {
@@ -46,7 +46,7 @@ st.markdown(
 )
 
 # Display the logo
-st.markdown('<img class="logo" src="https://raw.githubusercontent.com/vmhashim/denta-vision/main/assets/logo.jpg" alt="Logo">', unsafe_allow_html=True)
+st.markdown('<img class="logo" src="https://raw.githubusercontent.com/vmhashim/denta-vision/main/logo.jpg" alt="Logo">', unsafe_allow_html=True)
 
 st.markdown('<div class="title">DENTA VISION</div>', unsafe_allow_html=True)
 st.write("Upload a Tooth Image to Determine the Age")
