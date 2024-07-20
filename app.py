@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import tempfile
 
-# Frontend: Streamlit interface
+# Frontend: Streamlit interface with grayish background and text in the bottom-right corner
 st.markdown(
     """
     <style>
@@ -13,6 +13,17 @@ st.markdown(
         color: red;
         font-size: 50px;
         font-weight: bold;
+    }
+    body {
+        background-color: #f0f0f0;  /* Grayish background color */
+    }
+    .credits {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        font-size: 12px;
+        color: #333;
+        text-align: right;
     }
     </style>
     """,
@@ -83,3 +94,16 @@ if uploaded_file is not None:
     
     # Display only the estimated age
     st.write(f'Estimated Age: {estimated_age:.1f} years')
+
+# Footer with credits
+st.markdown(
+    """
+    <div class="credits">
+        by Abdul Rehaman<br>
+        Bilal Khan<br>
+        Mohammad Hisham Hassan<br>
+        V M Hashim
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
