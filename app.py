@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import tempfile
 
-# Frontend: Streamlit interface with grayish background and custom file uploader
+# Frontend: Streamlit interface
 st.markdown(
     """
     <style>
@@ -14,29 +14,6 @@ st.markdown(
         font-size: 50px;
         font-weight: bold;
     }
-    body {
-        background-color: #f0f0f0;  /* Grayish background color */
-    }
-    .file-upload-wrapper {
-        text-align: center;
-        padding: 20px;
-    }
-    .file-upload-wrapper input[type="file"] {
-        display: none;
-    }
-    .custom-file-upload {
-        border: 2px solid #cccccc;
-        border-radius: 12px;
-        padding: 20px;
-        background-color: #e0e0e0;
-        cursor: pointer;
-        display: inline-block;
-        font-size: 20px;
-        font-weight: bold;
-    }
-    .custom-file-upload:hover {
-        background-color: #d0d0d0;
-    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -45,20 +22,8 @@ st.markdown(
 st.markdown('<div class="title">DENTA VISION</div>', unsafe_allow_html=True)
 st.write("Upload a Tooth Image to Determine the Age")
 
-# Custom file uploader
-st.markdown(
-    """
-    <div class="file-upload-wrapper">
-        <label class="custom-file-upload">
-            <input type="file" id="file-upload" accept="image/png, image/jpeg" />
-            Drag or click to upload an image
-        </label>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"], key="uploader")
+# File uploader and image processing
+uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 
 def preprocess_image(image_path):
     image = cv2.imread(image_path)
