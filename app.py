@@ -9,8 +9,10 @@ st.header('Upload a Tooth Image to Determine the Age')
 page_bg_img = '''
 <style>
 body {
-    background-image: url("https://drive.google.com/file/d/1ldfOYvTr0HJBa_wcXTjYgpImjCWrKSes/view?usp=drive_link");
+    background-image: url("https://drive.google.com/uc?export=view&id=1ldfOYvTr0HJBa_wcXTjYgpImjCWrKSes");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 </style>
 '''
