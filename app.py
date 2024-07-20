@@ -2,7 +2,6 @@ import streamlit as st
 from PIL import Image
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 
 # Frontend: Streamlit interface
 st.markdown(
@@ -64,15 +63,7 @@ def estimate_age(features):
     feature_scores = [score_feature(f) for f in age_features]
     total_score = sum(feature_scores)
     estimated_age = 20 + (total_score * 3)
-    return estimated_age, feature_scores
-
-def analyze_gender_characteristics(width_height_ratio):
-    if width_height_ratio > 0.95:
-        return "The width-to-height ratio suggests characteristics more commonly associated with male teeth."
-    elif width_height_ratio < 0.85:
-        return "The width-to-height ratio suggests characteristics more commonly associated with female teeth."
-    else:
-        return "The width-to-height ratio is in an intermediate range and doesn't strongly suggest male or female characteristics."
+    return estimated_age
 
 # Processing the uploaded image
 if uploaded_file is not None:
@@ -87,20 +78,7 @@ if uploaded_file is not None:
     # Preprocess and analyze the image
     enhanced, segmented = preprocess_image(image_path)
     features = extract_features(enhanced, segmented)
-    estimated_age, feature_scores = estimate_age(features)
-    gender_analysis = analyze_gender_characteristics(features[-1])
+    estimated_age = estimate_age(features)
     
-    # Display results
+    # Display only the estimated age
     st.write(f'Estimated Age: {estimated_age:.1f} years')
-    st.write(f'Gender Analysis: {gender_analysis}')
-    st.write(f'Width-to-Height Ratio: {features[-1]:.2f}')
-    
-    feature_names = ['Attrition', 'Periodontosis', 'Secondary Dentin', 'Cementum Apposition', 'Root Resorption', 'Root Transparency']
-    st.write("\nFeature Scores:")
-    for name, score in zip(feature_names, feature_scores):
-        st.write(f"{name}: {score}")
-    
-    # Display preprocessing results as images
-    st.write("Enhanced and Segmented Images:")
-    st.image(enhanced, caption='Enhanced Image', use_column_width=True)
-    st.image(segmented, caption='Segmented Image', use_column_width=True)
