@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import cv2
 import numpy as np
+import tempfile
 
 # Frontend: Streamlit interface
 st.markdown(
@@ -67,16 +68,16 @@ def estimate_age(features):
 
 # Processing the uploaded image
 if uploaded_file is not None:
-    # Save the uploaded image to a temporary file
-    image = Image.open(uploaded_file)
-    image_path = 'uploaded_image.jpg'
-    image.save(image_path)
+    # Use a temporary file to save the uploaded image
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_file:
+        temp_file.write(uploaded_file.getvalue())
+        temp_file_path = temp_file.name
     
-    st.image(image, caption='Uploaded Tooth Image', use_column_width=True)
+    st.image(uploaded_file, caption='Uploaded Tooth Image', use_column_width=True)
     st.write('Processing the image to determine the age...')
     
     # Preprocess and analyze the image
-    enhanced, segmented = preprocess_image(image_path)
+    enhanced, segmented = preprocess_image(temp_file_path)
     features = extract_features(enhanced, segmented)
     estimated_age = estimate_age(features)
     
