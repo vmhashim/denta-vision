@@ -18,8 +18,9 @@ st.markdown(
     .logo {
         display: block;
         margin: 0 auto;
-        max-width: 50px; /* Adjust the size of the logo to 50px */
-        height: auto;    /* Maintain aspect ratio */
+        width: 100px;  /* Set width to 100px */
+        height: 110px; /* Set height to 110px */
+        object-fit: cover; /* Maintain aspect ratio, cover the container */
     }
     body {
         background-color: #f0f0f0;  /* Grayish background color */
