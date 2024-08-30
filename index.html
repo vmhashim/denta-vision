@@ -31,6 +31,14 @@
             font-size: 18px;
             line-height: 1.6;
         }
+        input[type="file"] {
+            margin: 20px 0;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
         .footer {
             margin-top: 50px;
             font-size: 14px;
@@ -43,14 +51,11 @@
         <img class="logo" src="https://raw.githubusercontent.com/vmhashim/denta-vision/main/assets/logo.jpg" alt="Logo">
         <h1>DENTA VISION</h1>
         <p>
-            Welcome to DENTA VISION! This project allows you to upload a tooth image to estimate the age based on dental features.
+            Upload a Tooth Image to Estimate the Age.
         </p>
-        <p>
-            The application is developed using Streamlit and Python, and it's designed to process and analyze tooth images to provide an estimated age.
-        </p>
-        <p>
-            To run the application, please clone the repository and follow the instructions provided in the README.md file.
-        </p>
+        <input type="file" id="upload" accept="image/png, image/jpeg">
+        <button onclick="processImage()">Estimate Age</button>
+        <div id="result"></div>
         <p class="footer">
             Powered by<br>
             Abdul Rehaman<br>
@@ -59,5 +64,7 @@
             V M Hashim
         </p>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
